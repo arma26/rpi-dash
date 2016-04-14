@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # raspi-config
-#	expand filesystem
-# 	boot to terminal (default)
-#	enable ssh server
+# expand filesystem
+# boot to terminal (default)
+# enable ssh server
 # expand filesystem (reboot if you do this, first)
 # tip: ctrl+alt+f1 changes to terminal
 
@@ -24,6 +24,7 @@ sed -i "s%#url#%$1%g" /etc/rc.local
 cp restart-pi /etc/cron.d/restart-pi
 
 cp restart_midori.sh /home/pi/restart_midori.sh
-chmod +x ~/restart_midori.sh
+chown pi:pi /home/pi/restart_midori.sh
+chmod +x /home/pi/restart_midori.sh
 
 reboot
