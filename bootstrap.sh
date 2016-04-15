@@ -13,7 +13,7 @@ if [ -z "$1" ]; then
 	exit;
 fi
 
-apt-get install -y vim midori unclutter ttf-mscorefonts-installer matchbox xinit
+apt-get install -y vim midori unclutter ttf-mscorefonts-installer matchbox xinit x11-xserver-utils
 apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y
 sed -i 's/XKBLAYOUT.*/XKBLAYOUT="us"/g' /etc/default/keyboard
 sed -i 's/#disable_overscan=1/disable_overscan=1/g' /boot/config.txt
